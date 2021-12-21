@@ -3,10 +3,7 @@ package co.com.sofka.taller;
 import co.com.sofka.generico.AggregateRoot;
 import co.com.sofka.generico.Nombre;
 import co.com.sofka.generico.Telefono;
-import co.com.sofka.registro.Cliente;
-import co.com.sofka.registro.Moto;
 import co.com.sofka.registro.Registro;
-import co.com.sofka.registro.values.Fecha;
 import co.com.sofka.reparacion.Reparacion;
 import co.com.sofka.taller.events.*;
 import co.com.sofka.taller.values.Direccion;
@@ -54,5 +51,21 @@ public class Taller extends AggregateRoot<TallerId> {
 
     public void asignarRegistro(Registro registro){
         this.applyChange(new RegistroAsignado(registro));
+    }
+
+    public void actualizarNombreEncargado(String nombre){
+        this.applyChange(new NombreEncargadoActualizado(nombre));
+    }
+
+    public void actualizarTelefonoEncargado(String telefono){
+        this.applyChange(new TelefonoEncargadoActualizado(telefono));
+    }
+
+    public void actualizarNombreMecanico(String nombre){
+        this.applyChange(new NombreMecanicoActualizado(nombre));
+    }
+
+    public void actualizarTelefonoMecanico(String telefono){
+        this.applyChange(new TelefonoMecanicoActualizado(telefono));
     }
 }

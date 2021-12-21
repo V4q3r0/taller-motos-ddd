@@ -6,33 +6,33 @@ import co.com.sofka.reparacion.Repuesto;
 import co.com.sofka.reparacion.values.Duracion;
 import co.com.sofka.reparacion.values.ReparacionId;
 
-public class CrearReparacion extends DomainEvent {
+public class ReparacionCreada extends DomainEvent {
     private final ReparacionId reparacionId;
     private final Herramienta herramienta;
-    private final Duracion duracion;
     private final Repuesto repuesto;
+    private final Duracion duracion;
 
-    public CrearReparacion(ReparacionId reparacionId, Herramienta herramienta, Repuesto repuesto, Duracion duracion){
-        super("sofka.taller.reparacioncreada");
+    public ReparacionCreada(ReparacionId reparacionId, Herramienta herramienta, Repuesto repuesto, Duracion duracion){
+        super("sofka.reparacion.reparacioncreada");
         this.reparacionId = reparacionId;
         this.herramienta = herramienta;
         this.repuesto = repuesto;
         this.duracion = duracion;
     }
 
-    public ReparacionId getReparacionId() {
-        return reparacionId;
-    }
-
-    public Herramienta getHerramienta() {
-        return herramienta;
+    public Duracion getDuracion() {
+        return duracion;
     }
 
     public Repuesto getRepuesto() {
         return repuesto;
     }
 
-    public Duracion getDuracion() {
-        return duracion;
+    public Herramienta getHerramienta() {
+        return herramienta;
+    }
+
+    public ReparacionId getReparacionId() {
+        return reparacionId;
     }
 }

@@ -17,6 +17,10 @@ public class Mecanico extends Entity<MecanicoId> {
         this.telefono = Objects.requireNonNull(telefono);
     }
 
+    public void cambiarNombre(MecanicoId mecanicoId, Nombre nombre){
+
+    }
+
     public Nombre nombre() {
         return nombre;
     }
